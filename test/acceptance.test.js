@@ -19,9 +19,11 @@ describe('Acceptance tests', () => {
 
     account.printStatement()
 
-    expect(printer.print).toHaveBeenCalledWith('DATE | AMOUNT | BALANCE')
-    expect(printer.print).toHaveBeenCalledWith('10/04/2014 | 500.00 | 1400.00')
-    expect(printer.print).toHaveBeenCalledWith('02/04/2014 | -100.00 | 900.00')
-    expect(printer.print).toHaveBeenCalledWith('01/04/2014 | 1000.00 | 1000.00')
+    expect(printer.print.mock.calls).toEqual([
+      ['DATE | AMOUNT | BALANCE'],
+      ['10/04/2014 | 500.00 | 1400.00'],
+      ['02/04/2014 | -100.00 | 900.00'],
+      ['01/04/2014 | 1000.00 | 1000.00']
+    ])
   })
 })
