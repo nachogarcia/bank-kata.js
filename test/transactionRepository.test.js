@@ -12,6 +12,6 @@ describe('TransactionRepository', () => {
     transactionRepository.put(transactions[0])
     transactionRepository.put(transactions[1])
 
-    expect(transactionRepository.all()).to.deep.eq(transactions)
+    expect(transactionRepository.all()).toEqual(transactions)
   })
 })
